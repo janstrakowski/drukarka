@@ -1,0 +1,15 @@
+[alias]
+flash = "run -p xtask --release -- flash"
+netconfig = "run -p xtask --release -- netconfig"
+bootstrap = "run -p xtask --release -- bootstrap"
+build-pi = "run -p xtask --release -- build-pi"
+deploy = "run -p xtask --release -- deploy"
+rollback = "run -p xtask --release -- rollback"
+migrate = "run -p xtask --release -- migrate"
+enroll = "run -p xtask --release -- enroll"
+status = "run -p xtask --release -- status"
+test-all = "test --workspace --all-targets"
+test-e2e = "test -p server --test e2e"
+
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"

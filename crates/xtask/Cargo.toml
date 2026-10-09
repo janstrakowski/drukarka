@@ -1,0 +1,25 @@
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "xtask"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { workspace = true }
+clap = { workspace = true }
+rcgen = { workspace = true }
+reqwest = { workspace = true }
+shared = { workspace = true }
+sha2 = { workspace = true }
+ssh2 = "0.9"
+tokio = { workspace = true }
+xz2 = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+hex = { workspace = true }

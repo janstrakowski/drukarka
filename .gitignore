@@ -1,0 +1,8 @@
+/target
+# Local deploy artifacts / machine CA (never publish)
+/out/
+*.img
+*.img.xz
+.DS_Store
+*.key
+*.pem

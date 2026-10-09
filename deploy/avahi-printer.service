@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="yes">HP LaserJet P1005 @ %h</name>
+
+  <!-- Bonjour / AirPrint — clients use drukarka IPP proxy on :631 (CUPS stays localhost). -->
+  <service>
+    <type>_ipp._tcp</type>
+    <subtype>_universal._sub._ipp._tcp</subtype>
+    <port>631</port>
+    <txt-record>txtvers=1</txt-record>
+    <txt-record>qtotal=1</txt-record>
+    <txt-record>rp=printers/HP_LaserJet_P1005</txt-record>
+    <txt-record>ty=HP LaserJet P1005</txt-record>
+    <txt-record>product=(HP LaserJet p1005 Printer)</txt-record>
+    <txt-record>note=Home Office</txt-record>
+    <txt-record>priority=0</txt-record>
+    <txt-record>pdl=application/pdf,application/postscript,image/jpeg,image/pwg-raster,image/urf</txt-record>
+    <txt-record>adminurl=https://drukarka.local/cups/</txt-record>
+    <txt-record>UUID=8ef8eef5-1f2f-3002-62c9-50f1de189912</txt-record>
+    <txt-record>URF=V1.4,CP1,W8,PQ3-4,SRGB24,RS300,DM1</txt-record>
+    <txt-record>Color=F</txt-record>
+    <txt-record>Duplex=F</txt-record>
+    <txt-record>printer-type=0x8016</txt-record>
+  </service>
+
+  <service>
+    <type>_printer._tcp</type>
+    <port>0</port>
+  </service>
+</service-group>

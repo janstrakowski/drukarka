@@ -1,0 +1,22 @@
+[Unit]
+Description=drukarka HTTPS admin UI (passkey + CUPS wrap)
+After=network-online.target cups.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/drukarka/current/drukarka-server serve
+Restart=on-failure
+RestartSec=2
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_DAC_OVERRIDE
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drukarka
+ReadOnlyPaths=/etc/drukarka-ca /opt/drukarka
+
+[Install]
+WantedBy=multi-user.target
